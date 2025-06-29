@@ -62,7 +62,6 @@ class AuthDataSourceImpl implements AuthDataSource {
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'email': email}),
     );
-    log(response.body);
     if (response.statusCode == 200) {
       return;
     } else {
@@ -79,9 +78,9 @@ class AuthDataSourceImpl implements AuthDataSource {
       Uri.parse('${baseUrl}auth'),
       headers: {'Content-Type': 'application/json'},
     );
-    final body = jsonDecode(utf8.decode(response.bodyBytes));
 
     if (response.statusCode == 200) {
+      final body = jsonDecode(utf8.decode(response.bodyBytes));
       return body['user_id'] as String;
     } else {
       throw UnknownAuthenticationException(

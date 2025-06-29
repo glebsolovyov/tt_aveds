@@ -66,6 +66,7 @@ dev_dependencies:
   # Testing
   flutter_test:
     sdk: flutter
+  bloc_test: ^9.1.0
 
   # Lints
   sizzle_lints: ^2.0.2
@@ -88,10 +89,6 @@ flutter:
 
   assets:
     - assets/images/
-
-flutter_gen:
-  output: lib/src/core/constant/generated
-  line_length: 80
 
 flutter_launcher_icons:
   #  image_path: "assets/images/icon-128x128.png"
